@@ -17,14 +17,18 @@ button{
 }
 .information{
     display: grid;
-    grid-template-columns: 33% / 33% / 33%;
-    grid-template-rows: 50% / 50%;
+    grid-template-columns: 33%  33%  33%;
+    grid-template-rows: 50%  50%;
+    column-gap: 20px;
+    row-gap: 20px;
+    height: 90%;
+    width: 100%;
 }
 
 .displayTemps{
+    margin-top: 25px;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    border: 10px;
-    border-style: inset;
-    border-color: black;
+    height: 100%;
+    width: 100%;
 }
