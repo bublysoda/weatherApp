@@ -1,0 +1,30 @@
+*{
+    background-color: lightblue;
+}
+input{
+    background-color: white;
+    margin-right: 2%;
+}
+button{
+    background-color: white;
+    margin-left: 2%;
+}
+
+.banner{
+    display: flex;
+    justify-content: center;
+    
+}
+.information{
+    display: grid;
+    grid-template-columns: 33% / 33% / 33%;
+    grid-template-rows: 50% / 50%;
+}
+
+.displayTemps{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    border: 10px;
+    border-style: inset;
+    border-color: black;
+}
