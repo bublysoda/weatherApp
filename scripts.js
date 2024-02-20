@@ -20,7 +20,10 @@ async function citySearch(){try{
     let varFeelC = weatherData.current.feelslike_c
     const grabFeelC = document.getElementById("feelslikeC")
     grabFeelC.textContent = `Feels like ${varFeelC}° Celsius`
+    //Runs the function below to add CSS
+    displayTempsCSS()
     }
+
     catch(err){
         alert("Could not find a city matching the typed input.  Try to check your spelling, or input another city!")
     }
@@ -28,14 +31,8 @@ async function citySearch(){try{
 
 //Adds CSS on click to prevent weird formatting when text is added to existing CSS
 function displayTempsCSS(){
-    const boxOne = document.getElementById("displayTemps")
-    boxOne.style.cssText('background-color: gray;')
-}
-
-//Separate function that spaces out the button onclick command
-function buttonCSS(){
-    const boop = document.getElementById("search")
-    boop.addEventListener('click', displayTempsCSS)
+    const boxOne = document.querySelector('.displayTemps')
+    boxOne.setAttribute('style', 'border-style: solid;')
 }
 
 //API Key is fb76a252d96e4c9286f205151241302
