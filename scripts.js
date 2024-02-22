@@ -20,8 +20,29 @@ async function citySearch(){try{
     let varFeelC = weatherData.current.feelslike_c
     const grabFeelC = document.getElementById("feelslikeC")
     grabFeelC.textContent = `Feels like ${varFeelC}° Celsius`
-    //Runs the function below to add CSS
-    displayTempsCSS()
+    displayTempsCSS() //adds CSS, hooray!
+
+    //Wind MPH
+    let varWindUS = weatherData.current.gust_mph 
+    const grabMPH = document.getElementById("windUS")
+    grabMPH.textContent = `${varWindUS} miles per hour winds`
+    //Wind KPH
+    let varWindEU = weatherData.current.wind_kph
+    const grabKPH = document.getElementById("windEU")
+    grabKPH.textContent = `${varWindEU} kilometers per hour winds`
+    //Wind Cardinal Direction
+    let varWindDir = weatherData.current.wind_dir
+    const grabDir = document.getElementById("windDIR")
+    grabDir.textContent = `Wind is coming from the ${varWindDir}`
+    //Rain US
+    let varRainUS = weatherData.current.precip_in
+    const grabRainUS = document.getElementById("rainIN")
+    grabRainUS.textContent = `${varRainUS} inches of precipitation`
+    //Rain EU
+    let varRainEU = weatherData.current.precip_mm
+    const grabRainEU = document.getElementById("rainMM")
+    grabRainEU.textContent = `${varRainEU} millimeters of precipitation`
+    windAndRainCSS() //adds CSS, hooray!
     }
 
     catch(err){
@@ -34,5 +55,8 @@ function displayTempsCSS(){
     const boxOne = document.querySelector('.displayTemps')
     boxOne.setAttribute('style', 'border-style: solid;')
 }
-
+function windAndRainCSS(){
+    const boxThree = document.querySelector('.windAndRain')
+    boxThree.setAttribute('style', 'border-style: solid;')
+}
 //API Key is fb76a252d96e4c9286f205151241302
