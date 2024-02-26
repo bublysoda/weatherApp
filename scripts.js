@@ -43,6 +43,25 @@ async function citySearch(){try{
     const grabRainEU = document.getElementById("rainMM")
     grabRainEU.textContent = `${varRainEU} millimeters of precipitation`
     windAndRainCSS() //adds CSS, hooray!
+
+    //Country
+    let varCountry = weatherData.location.country
+    const grabCountry = document.getElementById("country")
+    grabCountry.textContent = `${varCountry}`
+    //Region/state
+    let varState = weatherData.location.region
+    const grabState = document.getElementById("region")
+    grabState.textContent = `${varState}`
+    //City
+    let varCity = weatherData.location.name
+    const grabCity = document.getElementById("city")
+    grabCity.textContent = `${varCity}`
+    //Timezone
+    let varTimezone = weatherData.location.tz_id
+    const grabTZ = document.getElementById("time")
+    grabTZ.textContent = `The timezone is ${varTimezone}`
+    locationCSS() //adds CSS, hooray!
+
     }
 
     catch(err){
@@ -57,6 +76,10 @@ function displayTempsCSS(){
 }
 function windAndRainCSS(){
     const boxThree = document.querySelector('.windAndRain')
+    boxThree.setAttribute('style', 'border-style: solid;')
+}
+function locationCSS(){
+    const boxThree = document.querySelector('.locationInfo')
     boxThree.setAttribute('style', 'border-style: solid;')
 }
 //API Key is fb76a252d96e4c9286f205151241302
